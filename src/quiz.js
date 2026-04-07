@@ -3,6 +3,17 @@ class Quiz {
     // YOUR CODE HERE:
     //
     // 1. constructor (questions, timeLimit, timeRemaining)
+    constructor(questions, timeLimit, timeRemaining) {
+    this.questions = questions;
+    this.timeLimit = timeLimit;
+    this.timeRemaining = timeRemaining;
+  }
+}
+
+
+   
+  // 1. constructor (text, choices, answer, difficulty)
+  
 
     // 2. getQuestion()
     
@@ -13,4 +24,3 @@ class Quiz {
     // 5. checkAnswer(answer)
 
     // 6. hasEnded()
-}
