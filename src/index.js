@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
     new Question("What is the mass–energy equivalence equation?", ["E = mc^2", "E = m*c^2", "E = m*c^3", "E = m*c"], "E = mc^2", 3),
     // Add more questions here
   ];
+  
   const quizDuration = 120; // 120 seconds (2 minutes)
 
 
@@ -116,8 +117,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // 2. Update the green progress bar
     // Update the green progress bar (div#progressBar) width so that it shows the percentage of questions answered
     
-    progressBar.style.width = `65%`; // This value is hardcoded as a placeholder
-
+    progressBar.style.width = questions.length // This value is hardcoded as a placeholder
+    
 
 
     // 3. Update the question count text 
@@ -141,8 +142,10 @@ document.addEventListener("DOMContentLoaded", () => {
       // Hint 3: You can use the `element.appendChild()` method to append an element to the choices container.
       // Hint 4: You can use the `element.innerText` property to set the inner text of an element.
 
+      const radioButton = document.createElement(`radio`)
+      radioButton.innerHTML = `<input type="radio"></input> ` 
+        quizView.appendChild(radioButton);
   }
-
 
   
   function nextButtonHandler () {
