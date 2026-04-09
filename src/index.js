@@ -117,15 +117,16 @@ document.addEventListener("DOMContentLoaded", () => {
     // 2. Update the green progress bar
     // Update the green progress bar (div#progressBar) width so that it shows the percentage of questions answered
     
-    progressBar.style.width = questions.length // This value is hardcoded as a placeholder
+    progressBar.style.width = quiz.currentQuestionIndex 
+    console.log(progressBar) // This value is hardcoded as a placeholder
     
 
 
     // 3. Update the question count text 
     // Update the question count (div#questionCount) show the current question out of total questions
     
-    questionCount.innerText = quiz.currentQuestionIndex ; //  This value is hardcoded as a placeholder
-    console.log(questionCount)
+    //questionCount.innerText = quiz.currentQuestionIndex ; //  This value is hardcoded as a placeholder
+      questionCount.innerText = `Question ${quiz.currentQuestionIndex += 1} of ${questions.length}`;
 
 
     
