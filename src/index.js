@@ -39,6 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
   // Create a new Quiz instance object
   const quiz = new Quiz(questions, quizDuration, quizDuration);
+  console.log(quiz)
   // Shuffle the quiz questions
   quiz.shuffleQuestions();
 
@@ -54,8 +55,9 @@ document.addEventListener("DOMContentLoaded", () => {
   timeRemainingContainer.innerText = `${minutes}:${seconds}`;
 
   // Show first question
-  showQuestion();
+ showQuestion()
 
+ 
 
   /************  TIMER  ************/
 
@@ -89,6 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Get the current question from the quiz by calling the Quiz class method `getQuestion()`
     const question = quiz.getQuestion();
+    console.log(question)
     // Shuffle the choices of the current question by calling the method 'shuffleChoices()' on the question object
     question.shuffleChoices();
     
@@ -97,8 +100,18 @@ document.addEventListener("DOMContentLoaded", () => {
     // YOUR CODE HERE:
     //
     // 1. Show the question
-    // Update the inner text of the question container element and show the question text
+  questionContainer.innerText = question.text
+   
+       
+ 
 
+  
+
+
+
+
+
+   
     
     // 2. Update the green progress bar
     // Update the green progress bar (div#progressBar) width so that it shows the percentage of questions answered
