@@ -102,24 +102,13 @@ document.addEventListener("DOMContentLoaded", () => {
     //
     // 1. Show the question
   questionContainer.innerText = question.text
-   
-  
- 
-
-  
-
-
-
-
-
-   
-    
+      
     // 2. Update the green progress bar
     // Update the green progress bar (div#progressBar) width so that it shows the percentage of questions answered
-    
-    progressBar.style.width = quiz.currentQuestionIndex 
-    console.log(progressBar) // This value is hardcoded as a placeholder
-    
+
+      // This value is hardcoded as a placeholder
+    progressBar.style.width = `${(choiceContainer / question.length) * 100}%`;
+    console.log(progressBar)
 
 
     // 3. Update the question count text 
@@ -179,6 +168,7 @@ document.addEventListener("DOMContentLoaded", () => {
     //
     // 1. Get all the choice elements. You can use the `document.querySelectorAll()` method.
 
+  
 
     // 2. Loop through all the choice elements and check which one is selected
       // Hint: Radio input elements have a property `.checked` (e.g., `element.checked`).
