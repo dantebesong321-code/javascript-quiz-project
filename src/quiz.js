@@ -1,23 +1,19 @@
 class Quiz {
-  // 1. constructor (text, choices, answer, difficulty)
   constructor(questions, timeLimit, timeRemaining) {
     this.questions = questions;
     this.timeLimit = timeLimit;
     this.timeRemaining = timeRemaining;
-    this.correctAnswers = 0;
+    this.score = 0; // ← renamed from correctAnswers
     this.currentQuestionIndex = 0;
   }
-  // 2. getQuestion()
 
   getQuestion() {
     return this.questions[this.currentQuestionIndex];
   }
-  // 3. moveToNextQuestion()
 
   moveToNextQuestion() {
     this.currentQuestionIndex++;
   }
-  // 4. shuffleQuestions()
 
   shuffleQuestions() {
     for (let i = this.questions.length - 1; i > 0; i--) {
@@ -28,14 +24,17 @@ class Quiz {
       ];
     }
   }
-  // 5. checkAnswer(answer)
 
   checkAnswer(answer) {
-    if (answer === this.getQuestion().answer) {
-      this.correctAnswers++;
+    const currentQuestion = this.questions[this.currentQuestionIndex];
+    console.log("Respuesta seleccionada:", answer);
+    console.log("Respuesta correcta:", currentQuestion.correctAnswer);
+    console.log("¿Son iguales?", answer === currentQuestion.correctAnswer);
+    if (answer === currentQuestion.correctAnswer) {
+      this.score++;
     }
   }
-  // 6. hasEnded()
+
   hasEnded() {
     return this.currentQuestionIndex === this.questions.length;
   }

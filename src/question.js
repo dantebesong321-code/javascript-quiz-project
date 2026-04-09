@@ -1,9 +1,9 @@
 class Question {
   // 1. constructor (text, choices, answer, difficulty)
-  constructor(text, choices, answer, difficulty) {
+  constructor(text, choices, correctAnswer, difficulty) {
     this.text = text;
     this.choices = choices;
-    this.answer = answer;
+    this.correctAnswer = correctAnswer;
     this.difficulty = difficulty;
   }
 
