@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // 1. Show the question
   questionContainer.innerText = question.text
    
-       
+  
  
 
   
@@ -124,7 +124,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // 3. Update the question count text 
     // Update the question count (div#questionCount) show the current question out of total questions
     
-    questionCount.innerText = `Question 1 of 10`; //  This value is hardcoded as a placeholder
+    questionCount.innerText = quiz.currentQuestionIndex ; //  This value is hardcoded as a placeholder
+    console.log(questionCount)
 
 
     
@@ -142,9 +143,29 @@ document.addEventListener("DOMContentLoaded", () => {
       // Hint 3: You can use the `element.appendChild()` method to append an element to the choices container.
       // Hint 4: You can use the `element.innerText` property to set the inner text of an element.
 
-      const radioButton = document.createElement(`radio`)
-      radioButton.innerHTML = `<input type="radio"></input> ` 
-        quizView.appendChild(radioButton);
+      const radioButton = document.createElement(`div`)
+      radioButton.innerHTML = `  <input type="radio" name="choice" value="${question.choices[0]}">
+          <label>${question.choices[0]}</label>` 
+       choiceContainer.appendChild(radioButton);
+
+       const radioButton2 = document.createElement(`div`)
+      radioButton2.innerHTML = `  <input type="radio" name="choice" value="${question.choices[1]}">
+          <label>${question.choices[1]}</label>` 
+       choiceContainer.appendChild(radioButton2);
+
+       const radioButton3 = document.createElement(`div`)
+      radioButton3.innerHTML = `  <input type="radio" name="choice" value="${question.choices[2]}">
+          <label>${question.choices[2]}</label>` 
+       choiceContainer.appendChild(radioButton3);
+
+          const radioButton4 = document.createElement(`div`)
+      radioButton4.innerHTML = `  <input type="radio" name="choice" value="${question.choices[3]}">
+          <label>${question.choices[3]}</label>` 
+       choiceContainer.appendChild(radioButton4);
+
+
+
+       
   }
 
   
